@@ -1,0 +1,126 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Resources/Fonts/z_40_o1.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Scenes/UIScenes/AboutPopup.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/Fonts/Kenney Future Narrow.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://Assets/Audio/Music/alexander-nakarada-superepic.mp3" type="AudioStream" id=6]
+[ext_resource path="res://Scenes/UIScenes/SettingsPopup.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/UIScenes/EditorPopup.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/UIScenes/EditorItemPopup.tscn" type="PackedScene" id=9]
+
+[sub_resource type="DynamicFont" id=1]
+size = 50
+outline_size = 1
+outline_color = Color( 0, 0, 0, 0.235294 )
+use_filter = true
+font_data = ExtResource( 5 )
+
+[node name="MainMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Container" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 50
+custom_constants/margin_top = 50
+custom_constants/margin_left = 50
+custom_constants/margin_bottom = 50
+
+[node name="TitleContainer" type="VBoxContainer" parent="Container"]
+visible = false
+margin_left = 50.0
+margin_top = 50.0
+margin_right = 1870.0
+margin_bottom = 1030.0
+
+[node name="Title" type="Label" parent="Container/TitleContainer"]
+margin_right = 433.0
+margin_bottom = 57.0
+size_flags_horizontal = 0
+custom_colors/font_color = Color( 0.886275, 0.941176, 0.25098, 1 )
+custom_colors/font_outline_modulate = Color( 0.913725, 0.921569, 0.909804, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Scour Defense"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Container"]
+margin_left = 1370.0
+margin_top = 50.0
+margin_right = 1870.0
+margin_bottom = 1030.0
+rect_min_size = Vector2( 500, 0 )
+size_flags_horizontal = 8
+custom_constants/separation = 35
+alignment = 1
+
+[node name="NewGame" type="Button" parent="Container/VBoxContainer"]
+margin_left = 75.0
+margin_top = 215.0
+margin_right = 425.0
+margin_bottom = 290.0
+rect_min_size = Vector2( 350, 75 )
+focus_mode = 0
+size_flags_horizontal = 4
+custom_fonts/font = ExtResource( 3 )
+text = "New Game"
+
+[node name="Settings" type="Button" parent="Container/VBoxContainer"]
+margin_left = 75.0
+margin_top = 325.0
+margin_right = 425.0
+margin_bottom = 400.0
+rect_min_size = Vector2( 350, 75 )
+focus_mode = 0
+size_flags_horizontal = 4
+custom_fonts/font = ExtResource( 3 )
+text = "Settings"
+
+[node name="Editor" type="Button" parent="Container/VBoxContainer"]
+margin_left = 75.0
+margin_top = 435.0
+margin_right = 425.0
+margin_bottom = 510.0
+rect_min_size = Vector2( 350, 75 )
+size_flags_horizontal = 4
+custom_fonts/font = ExtResource( 3 )
+text = "Editor"
+
+[node name="About" type="Button" parent="Container/VBoxContainer"]
+margin_left = 75.0
+margin_top = 545.0
+margin_right = 425.0
+margin_bottom = 620.0
+rect_min_size = Vector2( 350, 75 )
+size_flags_horizontal = 4
+custom_fonts/font = ExtResource( 3 )
+text = "About"
+
+[node name="Sep" type="Control" parent="Container/VBoxContainer"]
+margin_top = 655.0
+margin_right = 500.0
+margin_bottom = 655.0
+
+[node name="Quit" type="Button" parent="Container/VBoxContainer"]
+margin_left = 75.0
+margin_top = 690.0
+margin_right = 425.0
+margin_bottom = 765.0
+rect_min_size = Vector2( 350, 75 )
+size_flags_horizontal = 4
+custom_fonts/font = ExtResource( 3 )
+text = "Quit"
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+autoplay = true
+bus = "BackgroundMusic"
+
+[node name="InterfaceEffects" type="AudioStreamPlayer" parent="."]
+
+[node name="AboutPopup" parent="." instance=ExtResource( 4 )]
+
+[node name="SettingsPopup" parent="." instance=ExtResource( 7 )]
+
+[node name="EditorPopup" parent="." instance=ExtResource( 8 )]
+
+[node name="EditorItemPopup" parent="." instance=ExtResource( 9 )]

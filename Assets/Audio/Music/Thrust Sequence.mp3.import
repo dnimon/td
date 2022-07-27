@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Thrust Sequence.mp3-759324c2416aed3938a56be4462a128a.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/Music/Thrust Sequence.mp3"
+dest_files=[ "res://.import/Thrust Sequence.mp3-759324c2416aed3938a56be4462a128a.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

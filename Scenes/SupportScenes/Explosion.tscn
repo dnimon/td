@@ -1,0 +1,31 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Assets/Effects/explosionSmoke4.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Effects/explosionSmoke3.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Effects/explosionSmoke5.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Effects/explosionSmoke1.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/SupportScenes/Explosion.gd" type="Script" id=5]
+[ext_resource path="res://Assets/Effects/explosionSmoke2.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Audio/Sounds/explosion09.wav" type="AudioStream" id=7]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 4 ), ExtResource( 6 ), ExtResource( 2 ), ExtResource( 1 ), ExtResource( 3 ) ],
+"loop": false,
+"name": "Explosion",
+"speed": 5.0
+} ]
+
+[node name="Explosion" type="AnimatedSprite"]
+frames = SubResource( 2 )
+animation = "Explosion"
+script = ExtResource( 5 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 7 )
+volume_db = 2.0
+autoplay = true
+bus = "SoundEffects"
+
+[connection signal="animation_finished" from="." to="." method="_on_ProjectileImpact_animation_finished"]
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_AudioStreamPlayer_finished"]

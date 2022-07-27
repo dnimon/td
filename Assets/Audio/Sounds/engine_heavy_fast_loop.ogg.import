@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/engine_heavy_fast_loop.ogg-1320e7bcff67b2d46a1120e94c485f67.oggstr"
+
+[deps]
+
+source_file="res://Assets/Audio/Sounds/engine_heavy_fast_loop.ogg"
+dest_files=[ "res://.import/engine_heavy_fast_loop.ogg-1320e7bcff67b2d46a1120e94c485f67.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
